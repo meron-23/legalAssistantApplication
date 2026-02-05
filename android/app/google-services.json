@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "679993146019",
+    "project_id": "legalassistantapplication",
+    "storage_bucket": "legalassistantapplication.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679993146019:android:b1bb49cf75be11ed771d16",
+        "android_client_info": {
+          "package_name": "com.example.legalassistantapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8iHYd49g2KBdYI3ubU-N6YlUw6I65dlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
