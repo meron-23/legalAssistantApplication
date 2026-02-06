@@ -7,24 +7,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:legalassistantapplication/main.dart';
+import 'package:meedish_legal/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Branding smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const LegalAssistantApp());
+    // Wrap in MaterialApp since MainScaffold needs it
+    await tester.pumpWidget(const MaterialApp(home: MainScaffold()));
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that our app builds with the correct branding.
+    // Note: Search for 'Meedish Legal News' which is the default title
+    expect(find.text('Meedish Legal News'), findsOneWidget);
   });
 }

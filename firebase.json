@@ -1,1 +1,39 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"legalassistantapplication","appId":"1:679993146019:android:b1bb49cf75be11ed771d16","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"legalassistantapplication","configurations":{"android":"1:679993146019:android:b1bb49cf75be11ed771d16","ios":"1:679993146019:ios:52cfae543be189b7771d16","macos":"1:679993146019:ios:52cfae543be189b7771d16","web":"1:679993146019:web:637486c9ab51bff0771d16","windows":"1:679993146019:web:7425d2beff2da483771d16"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "legalassistantapplication",
+          "appId": "1:679993146019:android:b1bb49cf75be11ed771d16",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "legalassistantapplication",
+          "configurations": {
+            "android": "1:679993146019:android:b1bb49cf75be11ed771d16",
+            "ios": "1:679993146019:ios:52cfae543be189b7771d16",
+            "macos": "1:679993146019:ios:52cfae543be189b7771d16",
+            "web": "1:679993146019:web:637486c9ab51bff0771d16",
+            "windows": "1:679993146019:web:7425d2beff2da483771d16"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

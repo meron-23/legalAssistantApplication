@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'screens/splash_screen.dart';
@@ -9,6 +10,7 @@ import 'screens/chat_bot_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
   print('Initializing Firebase...');
   try {
     final options = DefaultFirebaseOptions.currentPlatform;
@@ -18,11 +20,11 @@ void main() async {
   } catch (e) {
     print('Firebase initialization failed: $e');
   }
-  runApp(const LegalAssistantApp());
+  runApp(const MeedishLegalApp());
 }
 
-class LegalAssistantApp extends StatelessWidget {
-  const LegalAssistantApp({super.key});
+class MeedishLegalApp extends StatelessWidget {
+  const MeedishLegalApp({super.key});
 
   static const Color primaryNavy = Color(0xFF0D47A1);
   static const Color accentGold = Color(0xFFFFD700);
@@ -31,7 +33,7 @@ class LegalAssistantApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Federal Court Portal',
+      title: 'Meedish Legal',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
@@ -111,8 +113,8 @@ class _MainScaffoldState extends State<MainScaffold> {
   ];
 
   final List<String> _titles = [
-    'Federal Court News',
-    'Track Your Case',
+    'Meedish Legal News',
+    'Search Cases',
     'Submit Complaint',
   ];
 
@@ -155,7 +157,7 @@ class _MainScaffoldState extends State<MainScaffold> {
             BottomNavigationBarItem(
               icon: Icon(Icons.search),
               activeIcon: Icon(Icons.search, color: Color(0xFF0D47A1)),
-              label: 'Track Case',
+              label: 'Search Cases',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.rate_review),

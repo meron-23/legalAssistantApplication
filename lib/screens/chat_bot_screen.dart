@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 class ChatBotScreen extends StatefulWidget {
@@ -13,8 +14,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
   final List<Map<String, String>> _messages = [];
   bool _isTyping = false;
   final _scrollController = ScrollController();
-
-  static const String _apiKey = 'AIzaSyDKwDbo0u4DPHXG5qtQFuiWzRolZsJ_SLM';
+  final String _apiKey = dotenv.env['GEMINI_API_KEY'] ?? '';
   late final GenerativeModel _model;
   late final ChatSession _chat;
 
@@ -22,10 +22,10 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
   void initState() {
     super.initState();
     _model = GenerativeModel(
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       apiKey: _apiKey,
       systemInstruction: Content.system(
-        'You are a Federal Court Assistant. Your goal is to help citizens understand '
+        'You are a Meedish Legal Assistant. Your goal is to help citizens understand '
         'general court procedures, filing requirements, and court levels. '
         'IMPORTANT: Always include a disclaimer that you are an AI and cannot provide legal advice. '
         'Be formal, helpful, and concise.',
@@ -98,7 +98,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
             onPressed: () {
               showAboutDialog(
                 context: context,
-                applicationName: 'Federal Court Portal',
+                applicationName: 'Meedish Legal Portal',
                 applicationVersion: '1.0.0',
                 children: [
                   const Text(

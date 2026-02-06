@@ -29,7 +29,6 @@ class HomeScreen extends StatelessWidget {
                   color: Color(0xFF0D47A1),
                 ),
               ),
-              // Temporary Seed Button moved to a more subtle location
               TextButton.icon(
                 onPressed: () async {
                   try {
@@ -37,6 +36,7 @@ class HomeScreen extends StatelessWidget {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('Database seeded successfully!'),
+                        duration: Duration(seconds: 2),
                       ),
                     );
                   } catch (e) {
@@ -45,9 +45,22 @@ class HomeScreen extends StatelessWidget {
                     );
                   }
                 },
-                icon: const Icon(Icons.refresh, size: 16),
-                label: const Text('Sync', style: TextStyle(fontSize: 12)),
-                style: TextButton.styleFrom(foregroundColor: Colors.grey[400]),
+                icon: const Icon(Icons.sync, size: 20),
+                label: const Text(
+                  'Sync',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+                style: TextButton.styleFrom(
+                  foregroundColor: const Color(0xFF0D47A1),
+                  backgroundColor: const Color(0xFF0D47A1).withOpacity(0.08),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
               ),
             ],
           ),

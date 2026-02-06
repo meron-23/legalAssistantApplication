@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen>
               Image.asset('assets/logo.png', width: 200, height: 200),
               const SizedBox(height: 24),
               Text(
-                'Federal Court',
+                'Meedish Legal',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
